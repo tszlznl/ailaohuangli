@@ -1,0 +1,25 @@
+:root {
+  --paper: #faf9f5;
+  --ink: #1a1a1a;
+  --green: #009640;
+  --green-deep: #00742f;
+  --red: #c0281c;
+  --white: #ffffff;
+  --accent: var(--green-deep);
+  --accent-strong: var(--green);
+  --serif: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', SimSun, serif;
+  --sans: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --display: 'Abril Fatface', 'Playfair Display', Didot, 'Bodoni 72', serif;
+  --latin: 'Libre Caslon Text', 'Century Schoolbook', 'Times New Roman', serif;
+  --brush: 'Ma Shan Zheng', KaiTi, STKaiti, serif;
+}
+
+.theme-green {
+  --accent: var(--green-deep);
+  --accent-strong: var(--green);
+}
+
+.theme-red {
+  --accent: var(--red);
+  --accent-strong: var(--red);
+}
