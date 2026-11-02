@@ -23,6 +23,19 @@ describe('static route metadata', () => {
       expect(html).toContain(`rel="canonical" href="${SITE_URL}${route.path}"`);
       expect(html).toContain(`property="og:url" content="${SITE_URL}${route.path}"`);
       expect(html).toContain('name="description"');
+      expect(html).toContain(`property="og:image" content="${SITE_URL}/og.png"`);
+      expect(html).toContain('property="og:image:width" content="1200"');
+      expect(html).toContain('property="og:image:height" content="630"');
+      expect(html).toContain('name="twitter:card" content="summary_large_image"');
+      expect(html).toContain(`name="twitter:image" content="${SITE_URL}/og.png"`);
     });
   }
+
+  it('share image is a 1200x630 png', () => {
+    const png = readFileSync(resolve(process.cwd(), 'public/og.png'));
+
+    expect(png.subarray(1, 4).toString('ascii')).toBe('PNG');
+    expect(png.readUInt32BE(16)).toBe(1200);
+    expect(png.readUInt32BE(20)).toBe(630);
+  });
 });
