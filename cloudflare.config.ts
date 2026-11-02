@@ -10,7 +10,7 @@ export default defineConfig({
     "assets": {
       "notFoundHandling": "single-page-application"
     },
-    "domains": ["huangli.417000.xyz"],
+    "domains": ["huangli.199107.xyz"],
     "workersDev": true
   }
 });

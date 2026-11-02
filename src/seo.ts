@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const SITE_URL = 'https://huangli.417000.xyz';
+const SITE_URL = 'https://huangli.199107.xyz';
 
 interface PageSeo {
   title: string;

@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
 import { AppRoutes } from '../App';
 
-const SITE_URL = 'https://huangli.417000.xyz';
+const SITE_URL = 'https://huangli.199107.xyz';
 
 function renderAt(path: string) {
   return render(
