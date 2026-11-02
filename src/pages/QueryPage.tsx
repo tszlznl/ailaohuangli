@@ -6,8 +6,15 @@ import { VerdictSeal } from '../components/VerdictSeal';
 import { isTodayKey, normalizeDateKey } from '../domain/date';
 import { DEFAULT_MODEL_ID, getModelById } from '../domain/models';
 import { generateModelReading } from '../domain/modelReading';
+import { usePageSeo } from '../seo';
 
 export function QueryPage() {
+  usePageSeo({
+    title: 'AI 模型查询｜今日宜忌与分项吉凶',
+    description:
+      '查询 Claude、GPT、Gemini、DeepSeek 等 34 款模型的当日宜忌、四类分项吉凶与备用模型推荐。',
+    path: '/query',
+  });
   const [params, setParams] = useSearchParams();
   const dateKey = normalizeDateKey(params.get('date'));
   const rawModel = params.get('model');

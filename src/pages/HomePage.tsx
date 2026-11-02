@@ -7,8 +7,14 @@ import { FortuneGrid } from '../components/FortuneGrid';
 import { YiJiPanels } from '../components/YiJiPanels';
 import { generateAlmanac } from '../domain/almanac';
 import { normalizeDateKey } from '../domain/date';
+import { usePageSeo } from '../seo';
 
 export function HomePage() {
+  usePageSeo({
+    title: 'AI 老黄历｜每日 AI 宜忌与模型推荐',
+    description: '用真实农历与 34 款 AI 模型生成每日宜忌，告诉你今天适合用哪个模型做什么。',
+    path: '/',
+  });
   const [params, setParams] = useSearchParams();
   const dateKey = normalizeDateKey(params.get('date'));
   const almanac = useMemo(() => generateAlmanac(dateKey), [dateKey]);

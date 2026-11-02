@@ -6,12 +6,19 @@ import { normalizeDateKey } from '../domain/date';
 import { ACTIVITIES } from '../domain/pools';
 import { generatePickDay } from '../domain/pickDay';
 import type { HourCell } from '../domain/types';
+import { usePageSeo } from '../seo';
 
 function hourLabel(hour: HourCell): string {
   return hour.branch === '子' ? '夜半' : `${hour.branch}时`;
 }
 
 export function PickDayPage() {
+  usePageSeo({
+    title: 'AI 择日｜十二时辰吉凶与行动建议',
+    description:
+      '为发布新版本、写长文、面试备战、重构代码和写周报挑选吉时，十二时辰固定 3 吉 4 平 5 凶。',
+    path: '/pick',
+  });
   const [params, setParams] = useSearchParams();
   const dateKey = normalizeDateKey(params.get('date'));
   const rawActivity = params.get('activity');
