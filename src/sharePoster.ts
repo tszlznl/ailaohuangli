@@ -255,7 +255,7 @@ function drawPoster(ctx: CanvasRenderingContext2D, almanac: DayAlmanac) {
 
   const yiRows = drawYiJi(ctx, '宜', GREEN, GREEN_DEEP, almanac.yi.headline, almanac.yi.items, 414);
   const jiTop = Math.min(586 + (yiRows - 1) * 82, 636);
-  drawYiJi(ctx, '忌', RED, RED, almanac.ji.headline, almanac.ji.items, jiTop);
+  drawYiJi(ctx, '忌', INK, INK, almanac.ji.headline, almanac.ji.items, jiTop);
 
   ctx.strokeStyle = 'rgba(26, 26, 26, 0.18)';
   ctx.beginPath();
