@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .cloudflare/
+.prerender/
 .superpowers/
 *.tsbuildinfo
 *.local

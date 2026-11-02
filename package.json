@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run build:client && npm run build:ssr && node scripts/prerender.mjs",
+    "build:client": "tsc -b && vite build",
+    "build:ssr": "vite build --config vite.ssr.config.ts",
     "preview": "vite preview",
     "typecheck": "tsc -b --pretty false",
     "test": "vitest run",
     "test:watch": "vitest",
-    "deploy": "cf deploy"
+    "deploy": "npm run build && cf deploy --prebuilt"
   },
   "dependencies": {
     "lunar-javascript": "1.7.7",
