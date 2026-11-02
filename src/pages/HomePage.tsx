@@ -4,6 +4,7 @@ import { AlmanacHeader } from '../components/AlmanacHeader';
 import { DateBar } from '../components/DateBar';
 import { FateGrid } from '../components/FateGrid';
 import { FortuneGrid } from '../components/FortuneGrid';
+import { SharePosterButton } from '../components/SharePosterButton';
 import { YiJiPanels } from '../components/YiJiPanels';
 import { generateAlmanac } from '../domain/almanac';
 import { normalizeDateKey } from '../domain/date';
@@ -37,9 +38,12 @@ export function HomePage() {
         {dayWord}吉语：{almanac.aphorism}
       </div>
       <div className="cta-row">
-        <Link className="primary-button" to={`/query?date=${dateKey}`}>
-          查询模型{dayWord}宜忌
-        </Link>
+        <div className="cta-actions">
+          <Link className="primary-button" to={`/query?date=${dateKey}`}>
+            查询模型{dayWord}宜忌
+          </Link>
+          <SharePosterButton key={dateKey} almanac={almanac} dayWord={dayWord} />
+        </div>
       </div>
     </article>
   );

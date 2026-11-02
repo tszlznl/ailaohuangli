@@ -16,6 +16,7 @@ describe('home page', () => {
     expect(screen.getAllByText('宜').length).toBeGreaterThan(0);
     expect(screen.getAllByText('忌').length).toBeGreaterThan(0);
     expect(screen.getByText(/吉语/)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /生成(今日|当日)黄历图/ })).toBeInTheDocument();
     expect(container.querySelector('.hijri-arabic')).toBeNull();
     for (const panel of ['.yi-ji-panel.yi', '.yi-ji-panel.ji']) {
       const words = [...container.querySelectorAll(`${panel} .yi-ji-items span`)];
